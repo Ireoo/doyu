@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 
-const max = 10;
-const show = true;
+const max = 20;
+const show = false;
 
 const Nightmare = require('nightmare');
 
