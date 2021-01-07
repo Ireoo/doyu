@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-
-const max = 20;
+const max = 15;
 const show = false;
 
 const Nightmare = require('nightmare');
@@ -46,7 +45,7 @@ const open = ng_main => {
             pages.forEach((page, index) => {
                 if (!inArr(links, page.href)) {
                     page.ng.end().then(() => {
-                        pages.slice(index, 1)
+                        pages.splice(index, 1)
                         console.log(`一个页面退出，当前还剩：`, pages.length)
                     }).catch(console.log)
                 }
