@@ -1,0 +1,236 @@
+[
+  {
+    "name": "dy_did",
+    "value": "1fc72df3b3031593e4e3408000091601",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": true
+  },
+  {
+    "name": "loginrefer",
+    "value": "pt_6m4cfn50dj1i",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": true
+  },
+  {
+    "name": "msg_auth",
+    "value": "6aa814bee2f9abcb43700445ed6058f92d22d42a",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": true
+  },
+  {
+    "name": "msg_uid",
+    "value": "JPw9BgOnld5X",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": true
+  },
+  {
+    "name": "Hm_lvt_e99aee90ec1b2106afe7ec3b199020a7",
+    "value": "1609903358,1609906281,1610004344,1610019923",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": true
+  },
+  {
+    "name": "Hm_lpvt_e99aee90ec1b2106afe7ec3b199020a7",
+    "value": "1610019923",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": true
+  },
+  {
+    "name": "PHPSESSID",
+    "value": "o3j7l6am68kdfjmolde82o8ui5",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": true
+  },
+  {
+    "name": "acf_auth",
+    "value": "719awDNzthjMrr5ZLpwlpN4ZrfzLye3GR0xrs8DI8Ep%2FhdSVxciEEZoINPQ6gV%2BkVAdK9oBXOFYSQ8H0XxUiunS5NxvOFvUz3Xr2suOZf7ic1so2dmSZ",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": false,
+    "expirationDate": 1610550848.154928
+  },
+  {
+    "name": "dy_auth",
+    "value": "4caabzdRVMX4HbplFUiX%2BIHpVZxa5PXqbyFUTY%2FocprWlXtBthpKc87GkE5NnA9sPIFYsLAOdajFuW1C5Mcjg3%2BdHpAfkpOxDA5H9mF9xokIlnkL%2BSEj",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": false,
+    "expirationDate": 1610550848.154939
+  },
+  {
+    "name": "wan_auth37wan",
+    "value": "d2b9a20d3712qLlxV3avSYUIM6hq1r96kLstr2K6s%2BD%2F29e9UDErqEqfJl9pr%2FW6wZmrEt%2BiCoG3EuwYk0WZc1%2BnXCUcKgbHfmGDubCuXIvDRa1Nag",
+    "domain": ".douyu.com",
+    "hostOnly": false,
+    "path": "/",
+    "secure": false,
+    "httpOnly": true,
+    "session": false,
+    "expirationDate": 1610550848.15495
+  },
+  {
+    "name": "acf_uid",
+    "value": "36169721",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154959
+  },
+  {
+    "name": "acf_username",
+    "value": "36169721",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154964
+  },
+  {
+    "name": "acf_nickname",
+    "value": "Ireoo",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154969
+  },
+  {
+    "name": "acf_own_room",
+    "value": "0",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154974
+  },
+  {
+    "name": "acf_groupid",
+    "value": "1",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154978
+  },
+  {
+    "name": "acf_phonestatus",
+    "value": "1",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154983
+  },
+  {
+    "name": "acf_avatar",
+    "value": "https%3A%2F%2Fapic.douyucdn.cn%2Fupload%2Favatar_v3%2F202001%2F9ef379cff8624139b2f76f5dc2a421f4_",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": true
+  },
+  {
+    "name": "acf_ct",
+    "value": "0",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154992
+  },
+  {
+    "name": "acf_ltkid",
+    "value": "79250729",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.154996
+  },
+  {
+    "name": "acf_biz",
+    "value": "1",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.155001
+  },
+  {
+    "name": "acf_stk",
+    "value": "ff9b28ee05923e32",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1610550848.155006
+  },
+  {
+    "name": "acf_did",
+    "value": "ff95c01cbd4d44da70a2843900001601",
+    "domain": "www.douyu.com",
+    "hostOnly": true,
+    "path": "/",
+    "secure": false,
+    "httpOnly": false,
+    "session": false,
+    "expirationDate": 1925381649
+  }
+]

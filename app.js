@@ -18,7 +18,7 @@ const nightmare = Nightmare({
     show
 });
 
-const cookies = JSON.parse(fs.readFileSync(path.join(require('os').homedir(), 'desktop/cookies.txt'), 'utf8'));
+const cookies = JSON.parse(fs.readFileSync(path.join(__dirname, 'cookies.txt'), 'utf8'));
 const pages = [];
 const inArr = (arr, txt) => {
     return arr.filter(a => a.href === txt).length !== 0
