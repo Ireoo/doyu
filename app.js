@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const max = 12;
+const max = 10;
 const show = false;
 
 const Nightmare = require('nightmare');
@@ -105,3 +105,12 @@ nightmare
         open(nightmare)
     })
     .catch(console.log)
+
+let run_time = 60 * 70
+let run_now = 0
+
+setInterval(() => {
+    run_now++
+    console.log(`已经运行:`, (run_now - run_now % 60) / 60, '分', run_now % 60, '秒')
+    if (run_now >= run_time) process.exit()
+}, 1000)
