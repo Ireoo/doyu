@@ -62,7 +62,7 @@ const open = ng_main => {
                             let title = await ng_page
                                 .viewport(1920, 1080)
                                 .useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11')
-                                .goto(link.href)
+                                .goto(link.href, { referrer: 'https://www.douyu.com/g_jdqs' })
                                 .cookies.set(cookies)
                                 .wait(1000 * 3)
                                 .scrollTo(5000, 0)
@@ -113,6 +113,7 @@ let run_now = 0
 
 setInterval(() => {
     run_now++
-    if (run_now % 5 === 0) console.log(`已经运行:`, (run_now - run_now % 60) / 60, '分', run_now % 60, '秒')
-    if (run_now >= run_time) process.exit()
+    let s = run_time - run_now
+    if (run_now % 5 === 0) console.log(`已经运行:`, (run_now - run_now % 60) / 60, '分', run_now % 60, '秒.', '还剩', (s - s % 60) / 60, '分', s % 60, '秒.')
+    if (s <= 0) process.exit()
 }, 1000)
