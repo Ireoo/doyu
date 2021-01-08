@@ -12,7 +12,7 @@ on:
 
 jobs:
   TEST:
-    runs-on: windows-latest
+    runs-on: macOS-latest
 
     strategy:
       matrix:

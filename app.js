@@ -68,7 +68,7 @@ const open = ng_main => {
                             });
                             let title = await ng_page
                                 .viewport(1920, 1080)
-                                .useragent('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)')
+                                .useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11')
                                 .goto(link.href, { referrer: 'https://www.douyu.com/g_jdqs' })
                                 .cookies.set(cookies)
                                 .wait(1000 * 3)
@@ -101,7 +101,7 @@ const open = ng_main => {
 
 nightmare
     .viewport(1920, 1080)
-    .useragent('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)')
+    .useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11')
     .goto('https://www.douyu.com/g_jdqs')
     .cookies.set(cookies)
     .wait(1000 * 3)
