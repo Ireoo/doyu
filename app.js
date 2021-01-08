@@ -67,7 +67,7 @@ const open = ng_main => {
                                 .wait(1000 * 3)
                                 .scrollTo(5000, 0)
                                 .title();
-                            console.log(title, `当前已经打开：`, pages.length);
+                            console.log(title, `当前已经打开：`, pages.length + 1);
                             if (title !== '绝地求生空投') {
                                 await ng_page.end();
                             } else {
