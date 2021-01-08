@@ -18,7 +18,8 @@ const nightmare = Nightmare({
 });
 
 const cookies = JSON.parse(fs.readFileSync(path.join(__dirname, 'cookies/default.txt'), 'utf8'));
-const pages = [];
+const pages = [],
+    use_links = [];
 const inArr = (arr, txt) => {
     return arr.filter(a => a.href === txt).length !== 0
 }
@@ -55,7 +56,8 @@ const open = ng_main => {
                     let link = links[i];
                     // links.forEach(async link => {
                     try {
-                        if (!inArr(pages, link.href)) {
+                        if (!inArr(pages, link.href) && !inArr(use_links, link.href)) {
+                            use_links.push({ href: link.href })
                             let ng_page = Nightmare({
                                 show
                             });
