@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const max = 15;
+const max = 20;
 const show = false;
 
 const Nightmare = require('nightmare');
@@ -30,7 +30,7 @@ const open = ng_main => {
         .scrollTo(5000, 0)
         .evaluate(function() {
             let links = document.querySelectorAll("a.DyListCover-wrap") //.getElementsByClassName("DyListCover-wrap"))
-            var listArr = [],
+            let listArr = [],
                 listObj = {},
                 len = links.length;
             for (let i = 0; i < len; i++) {
@@ -66,15 +66,15 @@ const open = ng_main => {
                                 .wait(1000 * 3)
                                 .scrollTo(5000, 0)
                                 .title();
-                            console.log(title);
+                            console.log(title, `当前已经打开：`, pages.length);
                             if (title !== '绝地求生空投') {
-                                ng_page.end().catch(console.log);
+                                await ng_page.end();
                             } else {
                                 pages.push({
                                     href: link.href,
                                     ng: ng_page
                                 });
-                                console.log(`当前已经打开：`, pages.length)
+                                // console.log(`当前已经打开：`, pages.length)
                                 if (pages.length >= max) break
                             }
                         }
@@ -91,8 +91,6 @@ const open = ng_main => {
         .catch(console.log)
 }
 
-// console.log(`cookies ->`, cookies)
-
 nightmare
     .viewport(1920, 1080)
     .goto('https://www.douyu.com/g_jdqs')
@@ -101,40 +99,6 @@ nightmare
     .evaluate(function() {
         return document.querySelector("img.Avatar-img").src
     })
-    // .evaluate(function() {
-    //     let links = document.querySelectorAll("a.DyListCover-wrap") //.getElementsByClassName("DyListCover-wrap"))
-    //     var listArr = [],
-    //         listObj = {},
-    //         len = links.length;
-    //     for (let i = 0; i < len; i++) {
-    //         listObj.title = links[i].innerText;
-    //         listObj.href = links[i].href;
-    //         listArr.push(listObj);
-    //         listObj = {};
-    //     }
-    //     return listArr;
-    // })
-    // .then(async links => {
-    //     for (let i = 0; i < links.length; i++) {
-    //         let link = links[i];
-    //         // links.forEach(async link => {
-    //         try {
-    //             let ng_page = Nightmare({ show: true });
-    //             let title = await ng_page.goto(link.href)
-    //                 .cookies.set(cookies)
-    //                 .wait(1000 * 3)
-    //                 .title();
-    //             console.log(title);
-    //             if (title !== '绝地求生空投') ng_page.end().catch(console.log);
-    //             pages.push({
-    //                 href: link.href,
-    //                 ng: ng_page
-    //             });
-    //         } catch (e) {
-    //             console.log(e)
-    //         }
-    //     }
-    // })
     .then(img => {
         if (img === 'https://apic.douyucdn.cn/upload/avatar_v3/202001/9ef379cff8624139b2f76f5dc2a421f4_middle.jpg') console.log(`用户登陆成功`)
         console.log(`当前用户：`, img)
