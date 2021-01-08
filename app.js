@@ -75,7 +75,7 @@ const open = ng_main => {
                                 .scrollTo(5000, 0)
                                 .title();
                             console.log(title, `当前已经打开：`, pages.length + 1);
-                            if (title !== '斗鱼直播星声请出道') { //title !== '绝地求生空投' && 
+                            if (title !== '绝地求生空投') { //title !== '绝地求生空投' && '斗鱼直播星声请出道'
                                 await ng_page.end();
                             } else {
                                 pages.push({
