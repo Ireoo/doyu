@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const max = 10;
+const max = 12;
 const show = false;
 
 const Nightmare = require('nightmare');
@@ -61,6 +61,7 @@ const open = ng_main => {
                             });
                             let title = await ng_page
                                 .viewport(1920, 1080)
+                                .useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11')
                                 .goto(link.href)
                                 .cookies.set(cookies)
                                 .wait(1000 * 3)
@@ -93,6 +94,7 @@ const open = ng_main => {
 
 nightmare
     .viewport(1920, 1080)
+    .useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11')
     .goto('https://www.douyu.com/g_jdqs')
     .cookies.set(cookies)
     .wait(1000 * 3)
