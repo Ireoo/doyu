@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const max = 12;
+const max = 10;
 const show = false;
 
 const Nightmare = require('nightmare');
