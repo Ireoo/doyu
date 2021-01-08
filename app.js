@@ -17,7 +17,7 @@ const nightmare = Nightmare({
     show
 });
 
-const cookies = JSON.parse(fs.readFileSync(path.join(__dirname, 'cookies.txt'), 'utf8'));
+const cookies = JSON.parse(fs.readFileSync(path.join(__dirname, 'cookies/default.txt'), 'utf8'));
 const pages = [];
 const inArr = (arr, txt) => {
     return arr.filter(a => a.href === txt).length !== 0
@@ -61,7 +61,7 @@ const open = ng_main => {
                             });
                             let title = await ng_page
                                 .viewport(1920, 1080)
-                                .useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11')
+                                .useragent('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)')
                                 .goto(link.href, { referrer: 'https://www.douyu.com/g_jdqs' })
                                 .cookies.set(cookies)
                                 .wait(1000 * 3)
@@ -94,7 +94,7 @@ const open = ng_main => {
 
 nightmare
     .viewport(1920, 1080)
-    .useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11')
+    .useragent('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)')
     .goto('https://www.douyu.com/g_jdqs')
     .cookies.set(cookies)
     .wait(1000 * 3)
@@ -108,7 +108,7 @@ nightmare
     })
     .catch(console.log)
 
-let run_time = 60 * 70
+let run_time = 60 * 60 * 5.5
 let run_now = 0
 
 setInterval(() => {
