@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const max = 10;
+const max = 15;
 const show = false;
 
 const Nightmare = require('nightmare');
@@ -51,6 +51,11 @@ const open = ng_main => {
                     }).catch(console.log)
                 }
             })
+            use_links.forEach((use_link, index) => {
+                if (!inArr(links, use_link.href)) {
+                    use_links.splice(index, 1)
+                }
+            })
             if (pages.length < max) {
                 for (let i = 0; i < links.length; i++) {
                     let link = links[i];
@@ -70,7 +75,7 @@ const open = ng_main => {
                                 .scrollTo(5000, 0)
                                 .title();
                             console.log(title, `当前已经打开：`, pages.length + 1);
-                            if (title !== '绝地求生空投') {
+                            if (title !== '绝地求生空投' && title !== '斗鱼直播星声请出道') {
                                 await ng_page.end();
                             } else {
                                 pages.push({
@@ -110,12 +115,12 @@ nightmare
     })
     .catch(console.log)
 
-let run_time = 60 * 60 * 5.5
-let run_now = 0
+// let run_time = 60 * 60 * 5.5
+// let run_now = 0
 
-setInterval(() => {
-    run_now++
-    let s = run_time - run_now
-    if (run_now % 5 === 0) console.log(`已经运行:`, (run_now - run_now % 60) / 60, '分', run_now % 60, '秒.', '还剩', (s - s % 60) / 60, '分', s % 60, '秒.')
-    if (s <= 0) process.exit()
-}, 1000)
+// setInterval(() => {
+//     run_now++
+//     let s = run_time - run_now
+//     if (run_now % 5 === 0) console.log(`已经运行:`, (run_now - run_now % 60) / 60, '分', run_now % 60, '秒.', '还剩', (s - s % 60) / 60, '分', s % 60, '秒.')
+//     if (s <= 0) process.exit()
+// }, 1000)
