@@ -3,30 +3,21 @@ const path = require("path");
 
 const Nightmare = require("nightmare");
 const axios = require("axios");
+const moment = require("moment");
 
 const max = 15;
 const show = true;
+let chongzhi = false;
 let user = process.argv[2] ?
     `${process.argv[2]}_middle` :
     "9ef379cff8624139b2f76f5dc2a421f4_middle";
 
 console.log(`使用用户：`, user);
 
-// const nightmare = Nightmare({
-//     // webPreferences: {
-//     //     preload: path.resolve('./jquery.js')
-//     //         //alternative: preload: "absolute/path/to/custom-script.js"
-//     // },
-//     // openDevTools: {
-//     //     mode: 'detach'
-//     // },
-//     show,
-// });
-
 const cookies = JSON.parse(
     fs.readFileSync(path.join(__dirname, `cookies/${user}.txt`), "utf8")
 );
-const pages = [],
+let pages = [],
     use_links = [];
 const inArr = (arr, txt) => {
     return arr.filter((a) => a.href === txt).length !== 0;
@@ -34,7 +25,7 @@ const inArr = (arr, txt) => {
 
 const open = async() => {
     let links = [];
-    for (let i = 2; i < 10; i++) {
+    for (let i = 1; i < 10; i++) {
         let data = await axios.get(
             `https://www.douyu.com/gapi/rkc/directory/mixList/2_270/${i}`
         );
@@ -57,6 +48,12 @@ const open = async() => {
                 .catch(console.log);
         }
     });
+    let time = moment().format("H") * 1;
+    if (chongzhi && time > 0 && time < 1) {
+        chongzhi = false;
+        use_links = [];
+    }
+    if (time > 23) chongzhi = true;
     // use_links.forEach((use_link, index) => {
     //     if (!inArr(links, use_link.href)) {
     //         use_links.splice(index, 1);
@@ -73,7 +70,7 @@ const open = async() => {
                         show,
                     });
                     let title = await ng_page
-                        // .viewport(1920, 1080)
+                        .viewport(1920, 1080)
                         .useragent(
                             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"
                         )
@@ -102,6 +99,10 @@ const open = async() => {
     } else {
         console.log(`当前页面已经达到${max}个，等待其中有页面退出`);
     }
+    fs.writeFileSync(
+        path.join(__dirname, "use_links.json"),
+        JSON.stringify(use_links, null, 2)
+    );
     console.log(`等待10秒后再刷新...`);
     setTimeout(open, 1000 * 10);
 };
