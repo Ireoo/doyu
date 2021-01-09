@@ -6,7 +6,7 @@ const axios = require("axios");
 const moment = require("moment");
 
 const max = 15;
-const show = true;
+const show = false;
 let chongzhi = false;
 let user = process.argv[2] ?
     `${process.argv[2]}_middle` :
