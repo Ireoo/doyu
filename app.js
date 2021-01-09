@@ -11,16 +11,16 @@ let user =
 
 console.log(`使用用户：`, user);
 
-const nightmare = Nightmare({
-    // webPreferences: {
-    //     preload: path.resolve('./jquery.js')
-    //         //alternative: preload: "absolute/path/to/custom-script.js"
-    // },
-    // openDevTools: {
-    //     mode: 'detach'
-    // },
-    show,
-});
+// const nightmare = Nightmare({
+//     // webPreferences: {
+//     //     preload: path.resolve('./jquery.js')
+//     //         //alternative: preload: "absolute/path/to/custom-script.js"
+//     // },
+//     // openDevTools: {
+//     //     mode: 'detach'
+//     // },
+//     show,
+// });
 
 const cookies = JSON.parse(
     fs.readFileSync(path.join(__dirname, `cookies/${user}.txt`), "utf8")
