@@ -6,8 +6,9 @@ const axios = require("axios");
 
 const max = 15;
 const show = true;
-let user =
-    `${process.argv[2]}_middle` || "9ef379cff8624139b2f76f5dc2a421f4_middle";
+let user = process.argv[2] ?
+    `${process.argv[2]}_middle` :
+    "9ef379cff8624139b2f76f5dc2a421f4_middle";
 
 console.log(`使用用户：`, user);
 
