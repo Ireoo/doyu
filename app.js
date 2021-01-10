@@ -26,15 +26,19 @@ const inArr = (arr, txt) => {
 const open = async() => {
     let links = [];
     for (let i = 1; i < 10; i++) {
-        let data = await axios.get(
-            `https://www.douyu.com/gapi/rkc/directory/mixList/2_270/${i}`
-        );
-        links.push(
-            ...data.data.data.rl.map((d) => {
-                d.href = `https://www.douyu.com${d.url}`;
-                return d;
-            })
-        );
+        try {
+            let data = await axios.get(
+                `https://www.douyu.com/gapi/rkc/directory/mixList/2_270/${i}`
+            );
+            links.push(
+                ...data.data.data.rl.map((d) => {
+                    d.href = `https://www.douyu.com${d.url}`;
+                    return d;
+                })
+            );
+        } catch (e) {
+            console.log(e);
+        }
     }
     console.log(`获取有效页面连接数：`, links.length);
     pages.forEach((page, index) => {
